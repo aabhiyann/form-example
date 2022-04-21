@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AddUser from "./components/AddUser";
+import FormInput from "./components/FormInput";
 import User from "./components/User";
 
 function App() {
@@ -18,12 +19,15 @@ function App() {
       });
   };
 
-  const addData = async (name, email) => {
+  const addData = async (name, email, username, phone, website) => {
     await fetch("https://jsonplaceholder.typicode.com/users", {
       method: "POST",
       body: JSON.stringify({
         name: name,
         email: email,
+        username: username,
+        phone: phone,
+        website: website,
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -95,13 +99,12 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div>
       <h3>Create Table</h3>
-
       <br />
       <AddUser addData={addData} />
 
-      {users.map((user) => {
+      {/* {users.map((user) => {
         return (
           <User
             key={user.id}
@@ -110,7 +113,7 @@ function App() {
             editData={editData}
           />
         );
-      })}
+      })} */}
     </div>
   );
 }
