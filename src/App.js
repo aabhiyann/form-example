@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AddUser from "./components/AddUser";
-import FormInput from "./components/FormInput";
 import User from "./components/User";
+import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -102,16 +102,32 @@ function App() {
     <div>
       <AddUser addData={addData} />
 
-      {users.map((user) => {
-        return (
-          <User
-            key={user.id}
-            props={user}
-            deleteData={deleteData}
-            editData={editData}
-          />
-        );
-      })}
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {users.map((user) => {
+            return (
+              <User
+                key={user.id}
+                props={user}
+                deleteData={deleteData}
+                editData={editData}
+              />
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

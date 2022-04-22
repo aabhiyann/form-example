@@ -1,6 +1,5 @@
 import React from "react";
 import "./AddUser.css";
-import { Button, Form, Row, Col } from "react-bootstrap";
 
 const AddUser = ({ addData }) => {
   const handleOnSubmit = (e) => {
@@ -26,7 +25,7 @@ const AddUser = ({ addData }) => {
           <label className="label required">Add User</label>
         </h3>
 
-        <p class="field required">
+        <p className="field required">
           <label className="label required">Name</label>
           <input
             placeholder="Name"
@@ -36,7 +35,7 @@ const AddUser = ({ addData }) => {
           />
         </p>
 
-        <p class="field required half">
+        <p className="field required half">
           <label className="label required">Email</label>
           <input
             placeholder="Email"
@@ -46,7 +45,7 @@ const AddUser = ({ addData }) => {
           />
         </p>
 
-        <p class="field required half">
+        <p className="field required half">
           <label className="label required">Username</label>
           <input
             placeholder="Username"
@@ -56,7 +55,7 @@ const AddUser = ({ addData }) => {
           />
         </p>
 
-        <p class="field required">
+        <p className="field required">
           <label className="label required">Phone</label>
           <input
             placeholder="Phone"
@@ -66,7 +65,7 @@ const AddUser = ({ addData }) => {
           />
         </p>
 
-        <p class="field required">
+        <p className="field required">
           <label className="label required">Status</label>
           <input
             placeholder="Status"
@@ -76,7 +75,7 @@ const AddUser = ({ addData }) => {
           />
         </p>
 
-        <p class="field required">
+        <p className="field required">
           <label className="label required">Website</label>
           <input
             placeholder="Website"
@@ -86,10 +85,9 @@ const AddUser = ({ addData }) => {
           />
         </p>
 
-        <p class="field half">
-          <input class="button" type="submit" value="Add" />
+        <p className="field half">
+          <input className="button" type="submit" value="Add" />
         </p>
-        <hr />
       </form>
     </div>
   );

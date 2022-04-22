@@ -23,38 +23,34 @@ const User = ({ props, deleteData, editData }) => {
 
   return (
     <React.Fragment>
-      <div>
-        {isEdit ? (
-          <form onSubmit={handleOnEditSubmit}>
-            <input placeholder="Name" name="name" defaultValue={name} />
-            <input placeholder="Email" name="email" defaultValue={email} />
-            <input
-              placeholder="Username"
-              name="username"
-              defaultValue={username}
-            />
-            <input placeholder="Phone" name="phone" defaultValue={phone} />
-            <input
-              placeholder="Website"
-              name="website"
-              defaultValue={website}
-            />
-            <button onSubmit={handleOnEditSubmit}>Save</button>
-          </form>
-        ) : (
-          <div className="list">
-            <span className="user-name">{name}</span>
-            <span className="user-email">{email}</span>
-            <span className="user-username">{username}</span>
-            <span className="user-phone">{phone}</span>
-            <span className="user-website">{website}</span>
-            <div>
-              <button onClick={handleEdit}>Edit</button>
-              <button onClick={handleDelete}>Delete</button>
-            </div>
-          </div>
-        )}
-      </div>
+      {isEdit ? (
+        <form onSubmit={handleOnEditSubmit}>
+          <input placeholder="Name" name="name" defaultValue={name} />
+          <input placeholder="Email" name="email" defaultValue={email} />
+          <input
+            placeholder="Username"
+            name="username"
+            defaultValue={username}
+          />
+          <input placeholder="Phone" name="phone" defaultValue={phone} />
+          <input placeholder="Website" name="website" defaultValue={website} />
+          <button onSubmit={handleOnEditSubmit}>Save</button>
+        </form>
+      ) : (
+        <tr>
+          <td>{name}</td>
+          <td>{email}</td>
+          <td>{username}</td>
+          <td>{phone}</td>
+          <td>{website}</td>
+          <td>
+            <button onClick={handleEdit}>Edit</button>
+          </td>
+          <td>
+            <button onClick={handleDelete}>Delete</button>
+          </td>
+        </tr>
+      )}
     </React.Fragment>
   );
 };
