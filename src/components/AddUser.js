@@ -1,5 +1,6 @@
 import React from "react";
 import "./AddUser.css";
+import { Button, Form, Row, Col } from "react-bootstrap";
 
 const AddUser = ({ addData }) => {
   const handleOnSubmit = (e) => {
@@ -20,22 +21,74 @@ const AddUser = ({ addData }) => {
 
   return (
     <div className="app">
-      <form onSubmit={handleOnSubmit}>
-        <h3>Add User</h3>
-        <label>Name</label>
-        <input placeholder="Name" name="name" />
-        <label>Email</label>
-        <input placeholder="Email" name="email" />
-        <label>Username</label>
-        <input placeholder="Username" name="username" />
-        <label>Phone</label>
-        <input placeholder="Phone" name="phone" />
-        <label>Status</label>
-        <input placeholder="Status" name="status" />
-        <label>Website</label>
-        <input placeholder="Website" name="website" />
+      <form onSubmit={handleOnSubmit} className="form">
+        <h3>
+          <label className="label required">Add User</label>
+        </h3>
 
-        <button type="submit">Add</button>
+        <p class="field required">
+          <label className="label required">Name</label>
+          <input
+            placeholder="Name"
+            name="name"
+            className="text-input"
+            required
+          />
+        </p>
+
+        <p class="field required half">
+          <label className="label required">Email</label>
+          <input
+            placeholder="Email"
+            name="email"
+            className="text-input"
+            required
+          />
+        </p>
+
+        <p class="field required half">
+          <label className="label required">Username</label>
+          <input
+            placeholder="Username"
+            name="username"
+            className="text-input"
+            required
+          />
+        </p>
+
+        <p class="field required">
+          <label className="label required">Phone</label>
+          <input
+            placeholder="Phone"
+            name="phone"
+            className="text-input"
+            required
+          />
+        </p>
+
+        <p class="field required">
+          <label className="label required">Status</label>
+          <input
+            placeholder="Status"
+            name="status"
+            className="text-input"
+            required
+          />
+        </p>
+
+        <p class="field required">
+          <label className="label required">Website</label>
+          <input
+            placeholder="Website"
+            name="website"
+            className="text-input"
+            required
+          />
+        </p>
+
+        <p class="field half">
+          <input class="button" type="submit" value="Add" />
+        </p>
         <hr />
       </form>
     </div>

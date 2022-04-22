@@ -100,11 +100,9 @@ function App() {
 
   return (
     <div>
-      <h3>Create Table</h3>
-      <br />
       <AddUser addData={addData} />
 
-      {/* {users.map((user) => {
+      {users.map((user) => {
         return (
           <User
             key={user.id}
@@ -113,7 +111,7 @@ function App() {
             editData={editData}
           />
         );
-      })} */}
+      })}
     </div>
   );
 }
